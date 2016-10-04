@@ -1,5 +1,5 @@
 {
-  "name": "conFusion",
+  "name": "confusion",
   "private": true,
   "devDependencies": {
     "browser-sync": "^2.15.0",
@@ -24,5 +24,13 @@
   },
   "dependencies": {
     "latest-version": "^2.0.0"
-  }
+  },
+  "version": "1.0.0",
+  "description": "confusion file",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }
