@@ -34,11 +34,11 @@
             <p style="padding:20px;"></p>
             <h3 align=center>This Month's Promotions</h3>
         </div>
-        <div class="col-xs-12 col-sm-9">
-            <!-- Task 4 -->
-            <ul class="media-list">
-                <li class="media">
-                    <div class="media-left media-middle">
+         <div class="col-xs-12 col-sm-9 col-sm-pull-3">
+                <div ng-if="!showPromotion">
+                    <h3>{{message}}</h3>
+                </div>
+                <div class="media" ng-if="showPromotion">
                         <a href="#">
                             <img class="media-object img-thumbnail" ng-src={{promotion.image}} alt="Uthappizza">
                         </a>
@@ -49,8 +49,7 @@
                             <span class="badge">{{promotion.price | currency}}</span></h2>
                         <p>{{promotion.description}}</p>
                     </div>
-                </li>
-            </ul>
+                </div>
         </div>
     </div>
 

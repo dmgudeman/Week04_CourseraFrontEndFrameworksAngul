@@ -40,13 +40,13 @@ it('should automatically redirect to / when location hash/fragment is empty', fu
     });
 
     it('should show the first comment author as', function() {
-          element(by.model('orderText')).sendKeys('author');
+          element(by.model('orderText')).sendKeys('rating');
             expect(element.all(by.repeater('comment in dish.comments'))
             .count()).toEqual(10);
           var author = element.all(by.repeater('comment in dish.comments'))
                       .first().element(by.binding('comment.author'));
 
-          expect(author.getText()).toContain('25 Cent');
+          expect(author.getText()).toContain('2');
 
     }); 
  });  
