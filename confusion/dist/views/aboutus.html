@@ -1,6 +1,6 @@
 <!-- David M Gudeman -->
-<!-- Assignment 3 - Single Page Applications -->
-<!-- September 28, 2016 -->
+<!-- Assignment 4 - Client-Server Communication -->
+<!-- October 5, 2016 -->
 
 <div class="container" ng-controller="AboutController">
     <div class="row">
@@ -15,7 +15,6 @@
             <hr>
         </div>
     </div>
-
     <div class="row row-content">
         <div class="col-xs-12 col-sm-8">
             <h2>Our History</h2>
@@ -32,10 +31,8 @@
                         <cite title="Source Title">The Wit and Wisdom of Yogi Berra, P. Pepe, Diversion Books, 2014</cite></footer>
                 </blockquote>
             </div>
-
         </div>
         <div class="col-xs-12 col-sm-4">
-
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title">Facts At a Glance</h3>
@@ -56,27 +53,26 @@
         </div>
     </div>
 
-
     <div class="row row-content">
         <div class="col-xs-12 col-sm-9">
             <h2>Corporate Leadership</h2>
-            <ul class="media-list">
-                <!-- Task 3 -->
+            <div ng-if="!showLeader">
+                <h3>{{message3}}</h3>
+            </div>
+            <ul class="media-list" ng-if="showLeader">
                 <li class="media" ng-repeat="leader in leadership">
                     <div class="media-left media-middle">
-                        <a href="#">
+                        <a ui-sref="app.aboutus({id: leader.id})">
                             <img class="media-object img-thumbnail" ng-src={{leader.image}} alt="Uthappizza">
                         </a>
                     </div>
                     <div class="media-body">
                         <h2 style="display:inline;" class="media-heading pull left">{{leader.name}}</h2>
                         <span style="display:inline;" class="media-object pull left">{{leader.designation}}</span>
-
                         <p>{{leader.description}}</p>
                     </div>
                 </li>
             </ul>
-
         </div>
         <div class="col-xs-12 col-sm-3">
             <p style="padding:20px;"></p>

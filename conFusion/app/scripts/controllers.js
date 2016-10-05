@@ -177,8 +177,19 @@ angular.module('confusionApp')
     }])
 
     .controller('AboutController', ['$scope', '$stateParams', 'menuFactory', 'corporateFactory', function ($scope, $stateParams, menuFactory, corporateFactory) {
-        var leadership = corporateFactory.getLeaders();
-        $scope.leadership = leadership;
+       // var leadership = corporateFactory.getLeaders();
+       // $scope.leadership = leadership;
+       
+        $scope.showLeader = false;
+        $scope.message3 = "Loading ...";
+        corporateFactory.getLeaderShip().query(
+            function (response) {
+                $scope.leadership = response;
+                $scope.showLeader = true;
+            },
+            function (response) {
+                $scope.message = "Error: " + response.status + " " + response.statusText;
+            });
     }])
 
     ;
