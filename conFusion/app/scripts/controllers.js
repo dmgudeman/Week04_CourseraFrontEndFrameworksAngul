@@ -59,18 +59,23 @@ angular.module('confusionApp')
 
     }])
 
-    .controller('FeedbackController', ['$scope', function ($scope) {
+    .controller('FeedbackController', ['$scope', 'feedbackFactory', function ($scope, feedbackFactory) {
 
         $scope.sendFeedback = function () {
 
-            console.log($scope.feedback);
-
+           
+            console.log($scope.feedback + "after new constructor call");
+           
             if ($scope.feedback.agree && ($scope.feedback.mychannel === "")) {
                 $scope.invalidChannelSelection = true;
                 console.log('incorrect');
             }
             else {
                 $scope.invalidChannelSelection = false;
+                 console.log($scope.feedback + "-------this is feedback line 75");
+                feedbackFactory.save($scope.feedback, function(){
+                    console.log(feedbackFactory + " = Feedback");
+                });
                 $scope.feedback = { mychannel: "", firstName: "", lastName: "", agree: false, email: "" };
                 $scope.feedback.mychannel = "";
                 $scope.feedbackForm.$setPristine();
