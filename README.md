@@ -1,5 +1,4 @@
-# Week03_CourseraFrontEndFrameworksAngular
+# Week04_CourseraFrontEndFrameworksAngular
 
-This takes the submitted assignment from week two (the first commit)
-and in the first Exercise explores dependency injection, frameworks and ng-route.
+Client-Server Communication
 
