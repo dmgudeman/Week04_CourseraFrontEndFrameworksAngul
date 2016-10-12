@@ -1,3 +1,7 @@
+// David M Gudeman
+// Coursera Front-End JavaScript Frameworks: AngularJS
+// Assignment 4 - Client-Server Communication 
+// October 9, 2016
 'use strict';
 
 angular.module('confusionApp', ['ui.router','ngResource'])

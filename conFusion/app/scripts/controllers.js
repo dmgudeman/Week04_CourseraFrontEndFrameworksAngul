@@ -1,6 +1,7 @@
 // David M Gudeman
-// Assignment 3 - Single Page Applications
-// September 28, 2016
+// Coursera Front-End JavaScript Frameworks: AngularJS
+// Assignment 4 - Client-Server Communication 
+// October 9, 2016
 
 'use strict';
 
@@ -51,9 +52,7 @@ angular.module('confusionApp')
     .controller('ContactController', ['$scope', function ($scope) {
 
         $scope.feedback = { mychannel: "", firstName: "", lastName: "", agree: false, email: "" };
-
         var channels = [{ value: "tel", label: "Tel." }, { value: "Email", label: "Email" }];
-
         $scope.channels = channels;
         $scope.invalidChannelSelection = false;
 
@@ -62,24 +61,18 @@ angular.module('confusionApp')
     .controller('FeedbackController', ['$scope', 'feedbackFactory', function ($scope, feedbackFactory) {
 
         $scope.sendFeedback = function () {
-
-           
-            console.log($scope.feedback + "after new constructor call");
-           
             if ($scope.feedback.agree && ($scope.feedback.mychannel === "")) {
                 $scope.invalidChannelSelection = true;
                 console.log('incorrect');
             }
             else {
                 $scope.invalidChannelSelection = false;
-                 console.log($scope.feedback + "-------this is feedback line 75");
-                feedbackFactory.save($scope.feedback, function(){
-                    console.log(feedbackFactory + " = Feedback");
-                });
+                // task three push the feedback to the db.json file
+                feedbackFactory.save($scope.feedback, function(){});
+
                 $scope.feedback = { mychannel: "", firstName: "", lastName: "", agree: false, email: "" };
                 $scope.feedback.mychannel = "";
                 $scope.feedbackForm.$setPristine();
-                console.log($scope.feedback);
             }
         };
     }])

@@ -1,7 +1,7 @@
 // David M Gudeman
-// Assignment 3 - Single Page Applications
-// September 28, 2016
-
+// Coursera Front-End JavaScript Frameworks: AngularJS
+// Assignment 4 - Client-Server Communication 
+// October 9, 2016
 'use strict';
 
 angular.module('confusionApp')
@@ -26,7 +26,6 @@ angular.module('confusionApp')
     }])
     
     .factory('feedbackFactory', ['$resource', 'baseURL', function ($resource, baseURL) {
-
             return $resource(baseURL + "feedback/:id");
     }])
     ;
