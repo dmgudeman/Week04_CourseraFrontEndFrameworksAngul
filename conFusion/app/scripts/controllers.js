@@ -68,7 +68,7 @@ angular.module('confusionApp')
             else {
                 $scope.invalidChannelSelection = false;
                 // task three push the feedback to the db.json file
-                feedbackFactory.save($scope.feedback, function(){});
+                feedbackFactory.save($scope.feedback);
 
                 $scope.feedback = { mychannel: "", firstName: "", lastName: "", agree: false, email: "" };
                 $scope.feedback.mychannel = "";
@@ -120,7 +120,7 @@ angular.module('confusionApp')
     // my comment: AboutController will supply data for aboutus.html template
 
 
-    .controller('IndexController', ['$scope', '$stateParams', 'menuFactory', 'corporateFactory', function ($scope, $stateParams, menuFactory, corporateFactory) {
+    .controller('IndexController', ['$scope', 'menuFactory', 'corporateFactory', function ($scope, menuFactory, corporateFactory) {
 
        // var promotion = menuFactory.getPromotion(0);
      //   $scope.promotion = promotion;
